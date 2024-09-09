@@ -35,7 +35,7 @@ prompt = ChatPromptTemplate.from_template(
 )
 
 def vector_embedding():
-    if "vectors" not is st.session_state:
+    if "vectors" not in st.session_state:
         st.session_state.embeddings=GoogleGenerativeAIEmbeddings(model="models/embedding-001")
         st.session_state.loader=PyPDFDirectoryLoader("./Document")
         st.session_state.docs = st.session_state.loader.load()
